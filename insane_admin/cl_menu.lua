@@ -422,9 +422,7 @@ function openStaffMenu()
 							if Checked then							
 								InStaff = true
 								StaffMod = true
-							--	vstaff()
 							else
-							--	vstaffoff()
 								InStaff = false
 								StaffMod = false
 				
@@ -1370,47 +1368,6 @@ function FullVehicleBoost()
 		end
 	end
 end
-
---[[function vstaff()
-	local model = GetEntityModel(GetPlayerPed(-1))
-	TriggerEvent('skinchanger:getSkin', function(skin)
-		if model == GetHashKey("mp_m_freemode_01") then
-			clothesSkin = {
-				['bags_1'] = 0, ['bags_2'] = 0,
-				['tshirt_1'] = 15, ['tshirt_2'] = 2,
-				['torso_1'] = 178, ['torso_2'] = couleur,
-				['arms'] = 31,
-				['pants_1'] = 77, ['pants_2'] = couleur,
-				['shoes_1'] = 55, ['shoes_2'] = couleur,
-				['mask_1'] = 0, ['mask_2'] = 0,
-				['bproof_1'] = 0,
-				['chain_1'] = 0,
-				['helmet_1'] = 91, ['helmet_2'] = couleur,
-			}
-		else
-			clothesSkin = {
-				['bags_1'] = 0, ['bags_2'] = 0,
-				['tshirt_1'] = 31, ['tshirt_2'] = 0,
-				['torso_1'] = 180, ['torso_2'] = couleur,
-				['arms'] = 36, ['arms_2'] = 0,
-				['pants_1'] = 79, ['pants_2'] = couleur,
-				['shoes_1'] = 58, ['shoes_2'] = couleur,
-				['mask_1'] = 0, ['mask_2'] = 0,
-				['bproof_1'] = 0,
-				['chain_1'] = 0,
-				['helmet_1'] = 90, ['helmet_2'] = couleur,
-			}
-		end
-		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
-	end)
-end
-
-function vstaffoff()
-    ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-		TriggerEvent('skinchanger:loadSkin', skin)
-       end)
-	end ]]
-
 
 RegisterNetEvent("STAFFMOD:RegisterWarn")
 AddEventHandler("STAFFMOD:RegisterWarn", function(reason)
